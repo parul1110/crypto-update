@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import SearchBar from "./components/SearchBar";
+import Cryptodata from "./components/Cryptodata";
+import "./styles/Mixins.scss";
 import './App.css';
+import { useState } from "react";
 
 function App() {
+  const [item, setItem] = useState('');
+
+  const handleChange =(e)=>{
+    const searchtext = document.getElementById("Searchinput").value;
+    setItem(searchtext);
+}
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <SearchBar handleChange = {handleChange} />
+        <Cryptodata item={item} />
     </div>
   );
 }

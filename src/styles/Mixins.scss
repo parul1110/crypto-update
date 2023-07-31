@@ -1,0 +1,49 @@
+$btn-width: 350px;
+$btn-ht: 50px;
+$btn-radius: 0.375em;
+$padding: 15px;
+$light-color: white;
+
+@mixin rows-style(){
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+    width: 50%;
+}
+
+.bar {
+    width: $btn-width;
+    height: $btn-ht;
+    border-radius: $btn-radius;
+    margin-top: 5%;
+    color: $light-color;
+    background: linear-gradient(to right, blue 0%, purple 100%);
+    border-color: $light-color;
+}
+
+
+.ctab {
+    width: 100%;
+    color: $light-color;
+
+    .crydata {
+        margin-top: 10px;
+        text-align: left;
+        color: $light-color;
+   
+        .ctd {
+            @include rows-style();
+        }
+    }
+   
+}
+
+.pos-green {
+    color: green;
+    @include rows-style();
+}
+
+.neg-red {
+    color: red;
+    @include rows-style();
+}
